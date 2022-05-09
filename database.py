@@ -40,11 +40,36 @@ class RecipeSuggester:
         with self.connection:
             return self.connection.execute(GET_ALL_INGREDIENTS).fetchall()
 
+    def get_user_ingridients(self, ingridients):
+        user_ingridients = ingridients.split(",")
+        user_ingridients = [s.strip() for s in user_ingridients]
 
-recipes1 = RecipeSuggester()
+        return user_ingridients
+
+    def most_matches(self):
+        all_ingridients = self.get_all_ingredients()
+        user_ingridients = self.get_user_ingridients("Turkey mince, Tortilla, Onion")
+        most_matches = 0
+        recipe_id = 0
+
+        for recipe_index in range(len(all_ingridients)):
+            current_ingridients = all_ingridients[recipe_index][-1]
+            matches = 0
+
+            for user_ingridient in user_ingridients:
+                if user_ingridient in current_ingridients:
+                    matches += 1
+
+            if matches > most_matches:
+                most_matches = matches
+                recipe_id = all_ingridients[recipe_index][0]
+
+        return recipe_id
+
+
+# recipes1 = RecipeSuggester()
 # recipes1.create_table()
 # recipes1.add_recipe("Chicken Burrito", "Chicken meat, Tortilla, Cottage cheese, Greens, Onion, Corn", "Cook the chicken meat. Caramelize the onions. Put the chicken and corn in the pan with the onions. Heat the tortilla on a hot pan. Put the greens as a bed. Then the chicken with the corn and onions. Then put cottage cheese on top and any condiments of your choise. Enjoy!")
-# print(recipes1.get_all_ingredients())
-# ingredients1 = recipes1.get_all_ingredients()
-# print(ingredients1[-1][-1])
-
+# recipes1.add_recipe("Turkey Burrito", "Turkey mince, Tortilla, Cottage cheese, Greens, Onion, Corn", "Cook the turkey mince. Caramelize the onions. Put the turkey mince and corn in the pan with the onions. Heat the tortilla on a hot pan. Put the greens as a bed. Then the turkey mince with the corn and onions. Then put cottage cheese on top and any condiments of your choise. Enjoy!")
+# recipes1.add_recipe("Fusilli Bolognese", "Fusilli, Turkey mince, Tomato sauce, Garlic, Onion", "Boil the fusilli until they are al dente. Save a little of the water they boiled in for the sauce. Caramelize the onion and the garlic in a pan then add the turkey mince. Add Italian spices, salt and pepper. Add the tomato sauce, lower the heat and let it simmer for a few minutes. When the sauce is ready add the fusilli and a little bit of the water you boiled them in. Serve with cheese or by itself. Enjoy!")
+# print(recipes1.most_matches())
