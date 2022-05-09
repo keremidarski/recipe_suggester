@@ -5,10 +5,10 @@ Work in progress of an app that lets you save your favorite recipes in a databas
 ## How to Install and Run the Project
 
 1. Clone the repository.
-	`git clone git@github.com:keremidarski/recipe_suggester.git`
+`git clone git@github.com:keremidarski/recipe_suggester.git`
 
 2. Install the dependencies.
-	`pip3 install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 3. Run the app.
-	`python3 main.py`
+`python3 main.py`
