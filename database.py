@@ -34,7 +34,11 @@ class RecipeSuggester:
 
     def get_random_recipe(self):
         with self.connection:
-            return self.connection.execute(GET_RANDOM_RECIPE).fetchall()
+            recipe = self.connection.execute(GET_RANDOM_RECIPE).fetchall()
+
+            self.recipe_name = recipe[0][1]
+            self.recipe_ingredients = recipe[0][2]
+            self.recipe_instructions = recipe[0][3]
 
     def get_all_ingredients(self):
         with self.connection:
