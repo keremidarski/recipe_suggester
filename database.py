@@ -46,7 +46,7 @@ class RecipeSuggester:
 
     def get_user_ingridients(self, ingridients):
         user_ingridients = ingridients.split(",")
-        user_ingridients = [s.strip() for s in user_ingridients]
+        user_ingridients = [s.strip().lower() for s in user_ingridients]
 
         return user_ingridients
 
@@ -57,7 +57,7 @@ class RecipeSuggester:
         recipe_id = 0
 
         for recipe_index in range(len(all_ingridients)):
-            current_ingridients = all_ingridients[recipe_index][-1]
+            current_ingridients = all_ingridients[recipe_index][-1].lower()
             matches = 0
 
             for user_ingridient in user_ingridients:
