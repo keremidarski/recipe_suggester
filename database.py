@@ -12,6 +12,10 @@ INSERT_RECIPE = """INSERT INTO recipes
             VALUES (?, ?, ?);
             """
 
+GET_RECIPE_BY_ID = """SELECT * FROM recipes
+            WHERE recipe_id IS ?;
+            """
+
 GET_ALL_INGREDIENTS = "SELECT recipe_id, ingredients FROM recipes;"
 
 GET_RANDOM_RECIPE = """SELECT * FROM recipes
