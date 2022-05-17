@@ -64,7 +64,7 @@ class RecipeSuggester:
 
     def most_matches(self):
         all_ingridients = self.get_all_ingredients()
-        user_ingridients = self.get_user_ingridients("Turkey mince, Tortilla, Onion")
+        user_ingridients = self.get_user_ingridients("Chicken meat, Noodles, Onion")
         most_matches = 0
         recipe_id = 0
 
@@ -83,15 +83,21 @@ class RecipeSuggester:
         self.get_recipe_by_id(recipe_id)
 
 
-# recipes1 = RecipeSuggester()
+recipes1 = RecipeSuggester()
 
 # recipes1.create_table()
 # recipes1.add_recipe("Chicken Burrito", "Chicken meat, Tortilla, Cottage cheese, Greens, Onion, Corn", "Cook the chicken meat. Caramelize the onions. Put the chicken and corn in the pan with the onions. Heat the tortilla on a hot pan. Put the greens as a bed. Then the chicken with the corn and onions. Then put cottage cheese on top and any condiments of your choise. Enjoy!")
 # recipes1.add_recipe("Turkey Burrito", "Turkey mince, Tortilla, Cottage cheese, Greens, Onion, Corn", "Cook the turkey mince. Caramelize the onions. Put the turkey mince and corn in the pan with the onions. Heat the tortilla on a hot pan. Put the greens as a bed. Then the turkey mince with the corn and onions. Then put cottage cheese on top and any condiments of your choise. Enjoy!")
 # recipes1.add_recipe("Fusilli Bolognese", "Fusilli, Turkey mince, Tomato sauce, Garlic, Onion", "Boil the fusilli until they are al dente. Save a little of the water they boiled in for the sauce. Caramelize the onion and the garlic in a pan then add the turkey mince. Add Italian spices, salt and pepper. Add the tomato sauce, lower the heat and let it simmer for a few minutes. When the sauce is ready add the fusilli and a little bit of the water you boiled them in. Serve with cheese or by itself. Enjoy!")
+# recipes1.add_recipe("Chicken Noodles with Spicy Peanut Sauce", "Chicken meat, Noodles, Onion, Peanut butter, Sriracha sauce, Vinegar, Soy sauce, Garlic, Sugar, Eggs", "Cook the chicken meat in the oven. Mince some garlic and put it in a pan. Add the sugar, soy sauce, vinegar, sriracha and peanut butter and heat until the sugar is dissolved and everything is combined. If the mix is too thick - add water. Set it aside. Heat some oil in a pan and add the onion and fry it until it turns golden. This is the moment to add any leftover vegetables from the fridge. Add the cooked chicken sliced in bite-sized pieces. Boil the noodles and add them to the pan. Crack the eggs on the side of the pan and combine with everything else once they start to set. Finally add the peanut sauce and stir until everything is well mixed. Serve with sesame seeds. Enjoy!")
+# recipes1.add_recipe("Protein Oats", "Oatmeal, Protein powder, Cinnamon, Honey, Fruit, Nuts", "Cook the oats, protein powder and cinnamon. Once the mixture cools down a bit, add the honey, fruits and nuts. Enjoy!")
+# recipes1.add_recipe("Chicken with Sweet Potatoes", "Chicken meat, Sweet potatoes, Vegetables, Onion", "Put some oil in a large cooking tray. Put the oven on high. Cut everything in bite-sized pieces and put it in the tray. Add spices and a glass of water, wine or beer and put the tray in the oven. Bake until golden brown. Enjoy!")
 
 # recipes1.most_matches()
 # recipes1.get_random_recipe()
+# print()
 # print(recipes1.recipe_name)
+# print()
 # print(recipes1.recipe_ingredients)
+# print()
 # print(recipes1.recipe_instructions)
